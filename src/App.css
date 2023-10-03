@@ -1,38 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .App {
+  height: 100vh;
+  background: linear-gradient(178deg, #050311 30%, #26a9a7 300%);
+  overflow: hidden;
+  position: relative;
+}
+.App-header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.App-header p {
   text-align: center;
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(90deg, #4fdedc -8.41%, #f4c45b 145.69%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.blurBottom,
+.blurTop {
+  position: absolute;
+  scale: 1.1;
+  opacity: 0.8;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 2;
+}
+.blurBottom {
+  bottom: -45vh;
+  left: -20vw;
+  animation-name: translateBottom;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blurTop {
+  top: -30vh;
+  right: -15vw;
+  animation-name: translateTop;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.moonLogo {
+  mix-blend-mode: color-dodge;
+  z-index: 1;
+  position: absolute;
+  top: -1.7rem;
+  opacity: 0.3;
+  right: -4rem;
+  height: 110vh;
+  width: 55%;
+  animation: rotate 40s ease-in-out infinite;
+}
+
+@keyframes translateBottom {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(110%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes translateTop {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
