@@ -1,12 +1,21 @@
 import "./App.css";
 import shapeBlur from "./shapeBlur.webp";
 import moonLogo from "./moonLogo.svg";
+import DreamersLogo from "./dreamersLogo.svg";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Coming soon ...</p>
+        <div className="cont">
+          <img
+            src={DreamersLogo}
+            alt="DreamersLogo"
+            className="DreamersLogo"
+          ></img>
+          <p className="coming">Coming soon ...</p>
+          <p>A new way to communicate</p>
+        </div>
       </header>
       <img src={shapeBlur} className="blurBottom"></img>
       <img src={shapeBlur} className="blurTop"></img>
